@@ -1,0 +1,33 @@
+# RUN_MANIFEST
+
+- run_id: v17_20260619_github_pages_deployment
+- date: 2026-06-30
+- task: Prepare and attempt GitHub Pages deployment for the TAVR CT Anatomy Score static calculator.
+- command: Copy validated static files into `docs/`, add GitHub Pages metadata, validate local preview, initialize local git repository, and attempt GitHub publication if tooling permits.
+- input files:
+  - `02_output/v17_20260619_static_web_deployment_package/tavr-calculator/index.html`
+  - `02_output/v17_20260619_static_web_deployment_package/tavr-calculator/style.css`
+  - `02_output/v17_20260619_static_web_deployment_package/tavr-calculator/app.js`
+  - `02_output/v17_20260619_static_web_deployment_package/tavr-calculator/WebCalculator_logo.png`
+  - `02_output/v17_20260619_static_web_deployment_package/tavr-calculator/KM_Device_Success_MACE_CN_web_no_risk_table.png`
+  - `02_output/v17_20260619_static_web_deployment_package/tavr-calculator/KM_Device_Success_MACE_EN_web_no_risk_table.png`
+- output directory: `02_output/v17_20260619_github_pages_deployment/`
+- output files:
+  - `docs/index.html`
+  - `docs/style.css`
+  - `docs/app.js`
+  - `docs/WebCalculator_logo.png`
+  - `docs/KM_Device_Success_MACE_CN_web_no_risk_table.png`
+  - `docs/KM_Device_Success_MACE_EN_web_no_risk_table.png`
+  - `docs/.nojekyll`
+  - `README.md`
+  - `docs/README.md`
+  - `run_config.json`
+  - `run_log.txt`
+- model retraining performed: No.
+- locked results modified: No.
+- key results: Pending final GitHub Pages publication and public URL validation.
+- py_compile result: Not applicable; no Python analysis code created.
+- pytest result: Not run; no application test suite exists for this static calculator package.
+- next recommended step: Complete local docs validation, then publish to GitHub Pages if GitHub repository creation and Pages tooling are available.
+

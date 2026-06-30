@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>自膨瓣TAVR术前评估工具</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell page">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img class="header-logo" src="WebCalculator_logo.png" alt="">
+        </div>
+        <div class="brand-copy">
+          <h1 data-i18n="title">自膨瓣TAVR术前评估工具</h1>
+          <p data-i18n="subtitle">该工具仅用于单纯主动脉瓣反流患者接受自膨瓣TAVR时的30天VARC-3装置成功概率估计。</p>
+        </div>
+      </div>
+      <div class="language-switch" role="group" aria-label="Language switch">
+        <button id="language-cn" type="button" data-language="cn" aria-pressed="true">中</button>
+        <span aria-hidden="true"></span>
+        <button id="language-en" type="button" data-language="en" aria-pressed="false">EN</button>
+      </div>
+    </header>
+
+    <section class="dashboard-grid main-grid" aria-label="TAVR assessment calculator">
+      <article class="card input-card">
+        <div class="card-title">
+          <span class="title-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m4 16 12-12 4 4L8 20H4v-4ZM13 7l4 4M7 17l1 1M10 14l1 1M13 11l1 1"/></svg>
+          </span>
+          <h2 data-i18n="inputTitle">输入参数</h2>
+        </div>
+
+        <form id="calculator-form" novalidate>
+          <div class="fields">
+            <label class="form-group" for="annulus">
+              <span class="form-label" data-i18n="annulusLabel">1. 瓣环周长</span>
+              <span class="field-box input-box"><input id="annulus" type="number" inputmode="decimal" step="any" autocomplete="off" data-i18n-placeholder="placeholder" placeholder="输入数值"><span>mm</span></span>
+            </label>
+            <label class="form-group" for="stj-height">
+              <span class="form-label" data-i18n="stjHeightLabel">2. STJ高度</span>
+              <span class="field-box input-box"><input id="stj-height" type="number" inputmode="decimal" step="any" autocomplete="off" data-i18n-placeholder="placeholder" placeholder="输入数值"><span>mm</span></span>
+            </label>
+            <label class="form-group" for="aorta-diameter">
+              <span class="form-label" data-i18n="aortaLabel">3. 升主动脉直径（距瓣环40 mm）</span>
+              <span class="field-box input-box"><input id="aorta-diameter" type="number" inputmode="decimal" step="any" autocomplete="off" data-i18n-placeholder="placeholder" placeholder="输入数值"><span>mm</span></span>
+            </label>
+            <label class="form-group" for="stj-diameter">
+              <span class="form-label" data-i18n="stjDiameterLabel">4. STJ直径</span>
+              <span class="field-box input-box"><input id="stj-diameter" type="number" inputmode="decimal" step="any" autocomplete="off" data-i18n-placeholder="placeholder" placeholder="输入数值"><span>mm</span></span>
+            </label>
+          </div>
+
+          <div class="derived-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h1M8 15h2M12 15h2M16 15h1M8 18h2M12 18h5"/></svg>
+            <span data-i18n="deltaLabel">ΔMAo-STJ.（升主动脉直径−STJ直径）</span>
+            <output id="delta-output" for="aorta-diameter stj-diameter">--- </output><strong>mm</strong>
+          </div>
+          <p id="input-error" class="input-error" role="alert" aria-live="polite"></p>
+          <button class="calculate-button" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h1M8 15h2M12 15h2M16 15h1M8 18h2M12 18h5"/></svg>
+            <span data-i18n="calculate">计算</span>
+          </button>
+        </form>
+      </article>
+
+      <article class="card result-card">
+        <div class="card-title">
+          <span class="title-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 20h17M6 17v-5M11 17V8M16 17v-3M21 17V5"/></svg>
+          </span>
+          <h2 data-i18n="resultTitle">评估结果</h2>
+        </div>
+
+        <div class="score-card score-box">
+          <span>CT Anatomy Score</span>
+          <output id="score-output">---</output>
+        </div>
+
+        <div class="probability-card">
+          <h3 data-i18n="probabilityTitle">预测30天VARC-3装置成功概率</h3>
+          <div class="probability-ring donut" id="probability-ring" aria-label="Probability not calculated">
+            <div class="ring-center"><output id="probability-output">--%</output></div>
+          </div>
+          <div class="result-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21h6M10 17h4M8.5 14.5A7 7 0 1 1 15.5 14.5C14.6 15.3 14 16 14 17h-4c0-1-.6-1.7-1.5-2.5Z"/></svg>
+            <p data-i18n="scoreNote">该评分用于估计自膨瓣TAVR术后30天VARC-3装置成功概率。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card prognosis-card">
+        <div class="card-title">
+          <span class="title-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M2 12h4l2-5 4 10 3-7 2 2h5"/><path d="M12 21C7 18 3 14 3 9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5-4 9-9 12Z"/></svg>
+          </span>
+          <h2 data-i18n="prognosisTitle">预后信息</h2>
+        </div>
+
+        <figure class="km-card">
+          <div class="km-chart-wrapper">
+            <img id="km-image" class="km-image" src="KM_Device_Success_MACE_CN_web_no_risk_table.png" alt="基于真实 v08 统计分析的无MACE事件生存曲线图">
+          </div>
+        </figure>
+        <div class="prognosis-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 20 5v6c0 5-3 9-8 11-5-2-8-6-8-11V5Z"/><path d="m8 12 3 3 5-6"/></svg>
+          <p data-i18n="prognosisNote">装置成功组在随访期间总体无MACE事件率更高。</p>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer-disclaimer footer-note">
+      <div class="footer-identity">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 20 5v6c0 5-3 9-8 11-5-2-8-6-8-11V5Z"/><path d="M12 8v5M12 17h.01"/></svg>
+        <div class="footer-copy">
+          <span data-i18n="developerTeam">本研究用模型由中山大学孙逸仙纪念医院 TAVR 团队开发。</span>
+          <strong data-i18n="disclaimer">仅供研究使用，不用于临床决策。</strong>
+        </div>
+      </div>
+      <button class="acknowledgement-link" id="acknowledgement-open" type="button" data-i18n="acknowledgementButton">致谢</button>
+    </footer>
+  </main>
+
+  <div class="acknowledgement-modal" id="acknowledgement-modal" role="dialog" aria-modal="true" aria-labelledby="acknowledgement-title" hidden>
+    <div class="acknowledgement-backdrop" data-modal-close="true"></div>
+    <section class="acknowledgement-dialog">
+      <button class="modal-close" id="acknowledgement-close" type="button" aria-label="关闭致谢弹窗">×</button>
+      <div class="modal-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-11a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 6.6-7 11-7 11Z"/><path d="M8.5 12.5 11 15l4.5-5"/></svg>
+      </div>
+      <h2 id="acknowledgement-title" data-i18n="acknowledgementTitle">致谢</h2>
+      <p data-i18n="acknowledgementText">致谢：感谢广东省人民医院、佛山市人民医院、玉林市第一人民医院、暨南大学附属第一医院、广东医科大学附属医院在研究数据收集与项目推进中的支持。</p>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

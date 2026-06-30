@@ -1,0 +1,8 @@
+2026-06-30 Read GitHub Pages deployment request and project constraints.
+2026-06-30 Confirmed local static source package exists under 02_output/v17_20260619_static_web_deployment_package/tavr-calculator.
+2026-06-30 Confirmed app.js and style.css SHA-256 match v15 source files before copying.
+2026-06-30 GitHub CLI gh was not available in PATH.
+2026-06-30 GitHub plugin repository lookup for suoxinsuo/tavr-ct-anatomy-score-calculator returned 404 Not Found; no existing repository was found through that lookup.
+2026-06-30 Created docs directory and copied static website files.
+2026-06-30 Added .nojekyll, root README.md, and docs/README.md.
+

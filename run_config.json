@@ -1,0 +1,23 @@
+{
+  "run_id": "v17_20260619_github_pages_deployment",
+  "date": "2026-06-30",
+  "task": "github_pages_deployment",
+  "source_directory": "02_output/v17_20260619_static_web_deployment_package/tavr-calculator",
+  "output_directory": "02_output/v17_20260619_github_pages_deployment",
+  "docs_directory": "02_output/v17_20260619_github_pages_deployment/docs",
+  "target_repository_name": "tavr-ct-anatomy-score-calculator",
+  "target_owner_requested": "suoxinsuo",
+  "target_pages_url": "https://suoxinsuo.github.io/tavr-ct-anatomy-score-calculator/",
+  "pages_source_branch": "main",
+  "pages_source_folder": "/docs",
+  "model_retraining_performed": false,
+  "locked_results_modified": false,
+  "calculation_logic_modified": false,
+  "github_cli_available": false,
+  "github_repository_created": false,
+  "github_push_completed": false,
+  "github_pages_enabled": false,
+  "github_pages_public_url_validated": false,
+  "sensitive_information_found": false
+}
+
