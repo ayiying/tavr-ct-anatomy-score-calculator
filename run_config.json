@@ -14,10 +14,15 @@
   "locked_results_modified": false,
   "calculation_logic_modified": false,
   "github_cli_available": false,
+  "github_cli_install_attempted": true,
+  "github_cli_install_result": "failed: Homebrew reported no bottle available for gh on the current macOS environment",
+  "local_git_initialized": true,
+  "local_commit_hash": "34e8df99fb26e29919020348a7375e16c4fd2d7a",
+  "local_docs_validation_passed": true,
   "github_repository_created": false,
+  "github_repository_create_blocker": "GitHub CLI unavailable and exposed GitHub plugin tools do not include repository creation",
   "github_push_completed": false,
   "github_pages_enabled": false,
   "github_pages_public_url_validated": false,
   "sensitive_information_found": false
 }
-

@@ -24,10 +24,16 @@
   - `docs/README.md`
   - `run_config.json`
   - `run_log.txt`
+- GitHub Pages reporting files:
+  - `GITHUB_PAGES_DEPLOYMENT_REPORT.md`
+  - `GITHUB_PAGES_COMMANDS_USED.md`
+  - `GITHUB_PAGES_VALIDATION.md`
+  - `GITHUB_PAGES_SECURITY_CHECK.md`
+  - `GitHubPages_local_preview_CN.png`
+  - `GitHubPages_local_preview_EN.png`
 - model retraining performed: No.
 - locked results modified: No.
-- key results: Pending final GitHub Pages publication and public URL validation.
+- key results: Local `/docs` preview passed in Chinese and English. Example input returned Delta MAo-STJ 3.80, CT Anatomy Score 1.82, and Device Success probability 86%. `app.js` and `style.css` hashes match the v15 source files. GitHub repository creation, push, and Pages enablement were not completed because `gh` was unavailable and the exposed GitHub plugin tools did not include repository creation or Pages configuration.
 - py_compile result: Not applicable; no Python analysis code created.
 - pytest result: Not run; no application test suite exists for this static calculator package.
-- next recommended step: Complete local docs validation, then publish to GitHub Pages if GitHub repository creation and Pages tooling are available.
-
+- next recommended step: Create `suoxinsuo/tavr-ct-anatomy-score-calculator` manually or provide an authenticated GitHub CLI/session with repository-creation permission, then push this local repository and enable GitHub Pages from `main` branch `/docs`.

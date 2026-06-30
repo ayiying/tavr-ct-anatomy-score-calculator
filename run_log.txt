@@ -5,4 +5,13 @@
 2026-06-30 GitHub plugin repository lookup for suoxinsuo/tavr-ct-anatomy-score-calculator returned 404 Not Found; no existing repository was found through that lookup.
 2026-06-30 Created docs directory and copied static website files.
 2026-06-30 Added .nojekyll, root README.md, and docs/README.md.
-
+2026-06-30 Started local docs preview server on port 8090.
+2026-06-30 Playwright local validation passed for Chinese UI: score 1.82, probability 86%, Delta 3.80, logo and Chinese KM loaded.
+2026-06-30 Playwright local validation passed for English UI: score 1.82, probability 86%, Delta 3.80, logo and English KM loaded.
+2026-06-30 Browser console reported 0 warnings/errors; static requests returned HTTP 200.
+2026-06-30 Saved GitHubPages_local_preview_CN.png and GitHubPages_local_preview_EN.png.
+2026-06-30 Initialized local git repository and committed deployment package as 34e8df99fb26e29919020348a7375e16c4fd2d7a.
+2026-06-30 Attempted Homebrew install of GitHub CLI; failed because no bottle was available for gh on the current macOS environment.
+2026-06-30 Checked for GitHub credential environment variables by presence only; none were set.
+2026-06-30 Public target URL check did not return a usable page; GitHub Pages was not enabled because repository creation and push were blocked.
+2026-06-30 Generated GitHub Pages deployment, command, validation, and security reports.
